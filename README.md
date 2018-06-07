@@ -18,6 +18,8 @@ In addition to having a Cosmic JS account, you will also need to sign up for a f
 
 ### Develop
 
+Note: This App takes advantage of Cosmic JS's Webhooks to keep Algolia synced with your Cosmic JS data. Basically, whenever an Object is added, edited, or removed in Cosmic JS, a POST request is sent to a custom API endpoint that we create. When our server receives the POST request, it updates the corresponding Object in Algolia. Because of the reliance on a custom API endpoint to capture the Webhook POST request, the App needs to be deployed once for any syncing to take place.
+
 #### Add required development config files. Replace all `<__REQUIRED__>` fields.
 
  - /.env
