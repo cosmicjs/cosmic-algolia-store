@@ -7,15 +7,12 @@ const next = require('next');
 const routes = require('./routes');
 const algoliasearch = require('algoliasearch');
 const convertDataToAlgoliaObject = require('./utils/convertDataToAlgoliaObject');
-const Cosmic = require('cosmicjs');
 const fetch = require('isomorphic-fetch');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handler = routes.getRequestHandler(app);
-const api = Cosmic();
-const bucket = api.bucket({ slug: process.env.COSMIC_BUCKET });
 
 const client = algoliasearch(
   process.env.ALGOLIA_APPLICATION_ID,
